@@ -1,11 +1,10 @@
 const app = {
   init(selectors) {
-    this.flickd = [];
+    this.flicks = [];
     this.max = 0;
     this.list = document.querySelector(selectors.listSelector);
-    document
-      .querySelector(selectors.formSelector)
-      .addEventListener("submit", this.addFlick.bind(this));
+    this.flickform = document.querySelector(selectors.formSelector)
+      this.flickform.addEventListener("submit", this.addFlick.bind(this));
   },
   addFlick(ev) {
     ev.preventDefault();
@@ -17,7 +16,10 @@ const app = {
     const listItem = this.buildItem(flick);
     this.list.appendChild(listItem);
     // TODO: Add flick to this.flicks
+    this.flicks.push(listItem.textContent); // adds the text content of li
     ++this.max;
+    console.log(this.flicks);
+    this.flickform.reset(); // reset the input field
   },
   buildItem(flick) {
     const item = document.createElement("li");
