@@ -32,7 +32,6 @@ const app = {
     const listItem = this.renderListItem(flick)
     this.list
       .insertBefore(listItem, this.list.firstChild)
-    
     ++ this.max
     this.flicks.unshift(flick)
     this.save()
@@ -73,6 +72,15 @@ const app = {
       .querySelector('button.fav')
       .addEventListener('click', this.promoteFlick.bind(this))
 
+    item
+      .querySelector('button.up')
+      .addEventListener('click', this.moveFlickUp.bind(this))
+
+    item
+      .querySelector('button.down')
+      .addEventListener('click', this.moveFlickDown.bind(this))
+      
+
     return item
   },
 
@@ -94,8 +102,20 @@ const app = {
   // Change the color of element on "+" button click
   promoteFlick(ev) {
     const listItem = ev.target.closest('.flick')
+    if (listItem.style.color === 'gold') {
+      listItem.style.color = 'white'
+      return
+    } 
+    listItem.style.color = 'gold'
+  },
 
-  }
+  moveFlickUp() {
+    console.log('move up')
+  },
+
+  moveFlickDown() {
+    console.log('move down')
+  },
 }
 
 app.init({

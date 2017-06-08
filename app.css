@@ -3,7 +3,7 @@
 }
 
 h1 {
-  color: white;
+  color: greenyellow;
   font-family: 'Times New Roman', Times, serif;
   font-style: italic;
   text-align: center;
@@ -22,7 +22,7 @@ li {
   color: white;
   letter-spacing: 1px;
 }
-
-button.promote:active {
-  background-color: yellow;
+span.actions {
+  float: right;
 }
+/*button.fav {}*/
