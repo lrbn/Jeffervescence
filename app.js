@@ -108,7 +108,8 @@ const app = {
     } 
     listItem.style.color = 'gold'
   },
-
+  // TODO: When a flick is sent to the last node (lastChild) and pressed down again, it takes
+  // two clicks to up button 
   moveFlickUp(ev) {
     const listItem = ev.target.closest('.flick')
       if (listItem.previousSibling) {
@@ -118,6 +119,7 @@ const app = {
 
   moveFlickDown(ev) {
     const listItem = ev.target.closest('.flick')
+    // TODO: If this check is removed, the li element will switch with the li with the flick template class
     if (listItem.nextSibling.className !== 'flick template') {
       if (listItem.nextSibling) {
         listItem.parentNode.insertBefore(listItem.nextSibling, listItem)
