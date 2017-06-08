@@ -1,5 +1,5 @@
 .template {
-  visibility: hidden;
+  display: none;
 }
 
 h1 {

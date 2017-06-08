@@ -109,12 +109,20 @@ const app = {
     listItem.style.color = 'gold'
   },
 
-  moveFlickUp() {
-    console.log('move up')
+  moveFlickUp(ev) {
+    const listItem = ev.target.closest('.flick')
+      if (listItem.previousSibling) {
+        listItem.parentNode.insertBefore(listItem, listItem.previousSibling)
+      }
   },
 
-  moveFlickDown() {
-    console.log('move down')
+  moveFlickDown(ev) {
+    const listItem = ev.target.closest('.flick')
+    if (listItem.nextSibling.className !== 'flick template') {
+      if (listItem.nextSibling) {
+        listItem.parentNode.insertBefore(listItem.nextSibling, listItem)
+      }
+    }
   },
 }
 
