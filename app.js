@@ -13,24 +13,24 @@ const app = {
       id: this.max + 1,
       name: f.flickName.value,
     };
-    const listItem = this.buildItem(flick);
-    const promoteButton = document.createElement('button');
-    const deleteButton = document.createElement('button');
-    promoteButton.className = "success hollow button";
-    promoteButton.innerHTML = "+";
-    promoteButton.style.padding = "15px 20px";
-    deleteButton.className = "alert hollow button";
-    deleteButton.innerHTML = "-";
-    listItem.appendChild(promoteButton);
-    listItem.appendChild(deleteButton);
-    this.list.insertBefore(listItem, this.list.firstChild);
-    // TODO: Add flick to this.flicks
-    this.flicks.push(listItem.textContent); // adds the text content of li
+    const li = document.createElement('li');
+    const item = this.buildItem(flick);
+    item.id="left";
+    const b = document.createElement('button');
+    b.className = 'success hollow button'
+    b.innerHTML = '+';
+    const s = document.createElement('span');
+    s.id="right";
+    s.appendChild(b);
+    li.appendChild(item);
+    li.appendChild(s);
+    this.list.insertBefore(li, this.list.firstChild);
+    this.flicks.push(item.textContent);
     ++this.max;
-    this.flickform.reset(); // reset the input field
+    this.flickform.reset();
   },
   buildItem(flick) {
-    const item = document.createElement("li");
+    const item = document.createElement("span");
     item.textContent = flick.name;
     return item;
   },
