@@ -69,6 +69,10 @@ const app = {
       .querySelector('button.remove')
       .addEventListener('click', this.removeFlick.bind(this))
 
+    item
+      .querySelector('button.fav')
+      .addEventListener('click', this.promoteFlick.bind(this))
+
     return item
   },
 
@@ -87,6 +91,11 @@ const app = {
     listItem.remove()
     this.save()
   },
+  // Change the color of element on "+" button click
+  promoteFlick(ev) {
+    const listItem = ev.target.closest('.flick')
+
+  }
 }
 
 app.init({

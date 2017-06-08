@@ -1,3 +1,28 @@
 .template {
   visibility: hidden;
 }
+
+h1 {
+  color: white;
+  font-family: 'Times New Roman', Times, serif;
+  font-style: italic;
+  text-align: center;
+  font-size: 90px;
+  letter-spacing: 20px;
+}
+
+body {
+  background-color: black;
+}
+
+li {
+  font-family: 'Times New Roman', Times, serif;
+  font-style: italic;
+  font-size: 45px;
+  color: white;
+  letter-spacing: 1px;
+}
+
+button.promote:active {
+  background-color: yellow;
+}

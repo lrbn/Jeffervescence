@@ -22,10 +22,11 @@
               placeholder="Name a flick"
               autofocus
               required
+              autocomplete="off"
             >
             <div class="input-group-button">
               <button 
-                class="success button"
+                class="success hollow button"
                 type="submit"
               >
                 Add flick
@@ -42,8 +43,8 @@
           <li class="flick template">
             <span class="flick-name"></span>
             <span class="actions">
-              <button class="fav button">Fav</button>
-              <button class="remove button alert">Remove</button>
+              <button class="fav hollow success button">+</button>
+              <button class="remove hollow alert button">-</button>
             </span>
           </li>
         </ul>
